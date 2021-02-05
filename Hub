@@ -125,7 +125,6 @@ local function LPXPEV_fake_script() -- ScreenGui.LocalScript
  Button1 = "Ok";
  Callback = NotificationBindable;
 })
-end)
 	
 	Exit1.MouseButton1Down:connect(function()
       Welcome.Visible = false
