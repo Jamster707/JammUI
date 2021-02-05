@@ -1,0 +1,163 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Welcome = Instance.new("Frame")
+local JammUI = Instance.new("TextLabel")
+local Exit1 = Instance.new("TextButton")
+local Jailbreak = Instance.new("TextButton")
+local Lumber = Instance.new("TextButton")
+local nil1 = Instance.new("TextButton")
+local Phantom = Instance.new("TextButton")
+local Arsenal = Instance.new("TextButton")
+local nil2 = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Welcome.Name = "Welcome"
+Welcome.Parent = ScreenGui
+Welcome.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Welcome.Position = UDim2.new(0.334834844, 0, 0.336609364, 0)
+Welcome.Size = UDim2.new(0, 440, 0, 179)
+
+JammUI.Name = "JammUI"
+JammUI.Parent = Welcome
+JammUI.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+JammUI.BorderColor3 = Color3.fromRGB(43, 43, 43)
+JammUI.Size = UDim2.new(0, 400, 0, 33)
+JammUI.Font = Enum.Font.SourceSans
+JammUI.Text = "Welcome to JammUI, Please select a game"
+JammUI.TextColor3 = Color3.fromRGB(255, 255, 255)
+JammUI.TextSize = 14.000
+
+Exit1.Name = "Exit1"
+Exit1.Parent = Welcome
+Exit1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Exit1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Exit1.Position = UDim2.new(0.909090936, 0, 0, 0)
+Exit1.Size = UDim2.new(0, 40, 0, 33)
+Exit1.Font = Enum.Font.SourceSans
+Exit1.Text = "X"
+Exit1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Exit1.TextSize = 14.000
+
+Jailbreak.Name = "Jailbreak"
+Jailbreak.Parent = Welcome
+Jailbreak.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Jailbreak.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Jailbreak.Position = UDim2.new(0.0454545468, 0, 0.223463684, 0)
+Jailbreak.Size = UDim2.new(0, 110, 0, 50)
+Jailbreak.Font = Enum.Font.SourceSans
+Jailbreak.Text = "Jailbreak"
+Jailbreak.TextColor3 = Color3.fromRGB(255, 255, 255)
+Jailbreak.TextSize = 14.000
+
+Lumber.Name = "Lumber"
+Lumber.Parent = Welcome
+Lumber.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Lumber.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Lumber.Position = UDim2.new(0.0454545468, 0, 0.597765326, 0)
+Lumber.Size = UDim2.new(0, 110, 0, 50)
+Lumber.Font = Enum.Font.SourceSans
+Lumber.Text = "Lumber Tycoon 2"
+Lumber.TextColor3 = Color3.fromRGB(255, 255, 255)
+Lumber.TextSize = 14.000
+
+nil1.Name = "nil1"
+nil1.Parent = Welcome
+nil1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+nil1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+nil1.Position = UDim2.new(0.375, 0, 0.597765326, 0)
+nil1.Size = UDim2.new(0, 110, 0, 50)
+nil1.Font = Enum.Font.SourceSans
+nil1.Text = ""
+nil1.TextColor3 = Color3.fromRGB(255, 255, 255)
+nil1.TextSize = 14.000
+
+Phantom.Name = "Phantom"
+Phantom.Parent = Welcome
+Phantom.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Phantom.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Phantom.Position = UDim2.new(0.704545438, 0, 0.223463655, 0)
+Phantom.Size = UDim2.new(0, 110, 0, 50)
+Phantom.Font = Enum.Font.SourceSans
+Phantom.Text = "Phantom Forces"
+Phantom.TextColor3 = Color3.fromRGB(255, 255, 255)
+Phantom.TextSize = 14.000
+
+Arsenal.Name = "Arsenal"
+Arsenal.Parent = Welcome
+Arsenal.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Arsenal.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Arsenal.Position = UDim2.new(0.37499997, 0, 0.223463655, 0)
+Arsenal.Size = UDim2.new(0, 110, 0, 50)
+Arsenal.Font = Enum.Font.SourceSans
+Arsenal.Text = "Arsenal"
+Arsenal.TextColor3 = Color3.fromRGB(255, 255, 255)
+Arsenal.TextSize = 14.000
+
+nil2.Name = "nil2"
+nil2.Parent = Welcome
+nil2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+nil2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+nil2.Position = UDim2.new(0.704545498, 0, 0.597765326, 0)
+nil2.Size = UDim2.new(0, 110, 0, 50)
+nil2.Font = Enum.Font.SourceSans
+nil2.Text = ""
+nil2.TextColor3 = Color3.fromRGB(255, 255, 255)
+nil2.TextSize = 14.000
+
+-- Scripts:
+
+local function LPXPEV_fake_script() -- ScreenGui.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui)
+	
+	Exit1.MouseButton1Down:connect(function()
+      Welcome.Visible = false
+end)
+
+    Jailbreak.MouseButton1Down:connect(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Jamster707/JammUI/main/Jailbreak"))();
+end)
+    
+    
+    Arsenal.MouseButton1Down:connect(function()
+      	game.StarterGui:SetCore("SendNotification",  {
+ Title = "Jamm UI";
+ Text = "No Script For Arsenal Yet.";
+ Icon = "";
+ Duration = 5;
+ Button1 = "Ok";
+ Callback = NotificationBindable;
+})
+end)
+
+    Phantom.MouseButton1Down:connect(function()
+        game.StarterGui:SetCore("SendNotification",  {
+ Title = "Jamm UI";
+ Text = "No Script For Phantom Forces Yet.";
+ Icon = "";
+ Duration = 5;
+ Button1 = "Ok";
+ Callback = NotificationBindable;
+})
+end)
+
+    Lumber.MouseButton1Down:connect(function()
+        game.StarterGui:SetCore("SendNotification",  {
+ Title = "Jamm UI";
+ Text = "No Script For Lumber Tycoon 2 Yet.";
+ Icon = "";
+ Duration = 5;
+ Button1 = "Ok";
+ Callback = NotificationBindable;
+})
+end)
+	
+end
+coroutine.wrap(LPXPEV_fake_script)()
