@@ -136,14 +136,7 @@ end)
     
     
     Arsenal.MouseButton1Down:connect(function()
-      	game.StarterGui:SetCore("SendNotification",  {
- Title = "Jamm UI";
- Text = "No Script For Arsenal Yet.";
- Icon = "";
- Duration = 5;
- Button1 = "Ok";
- Callback = NotificationBindable;
-})
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/Jamster707/JammUI/main/Arsenal"))();
 end)
 
     Phantom.MouseButton1Down:connect(function()
