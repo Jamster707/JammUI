@@ -123,10 +123,10 @@ local function FNQYXN_fake_script() -- ScreenGui.LocalScript
 	
 	game.StarterGui:SetCore("SendNotification",  {
  Title = "Jamm UI";
- Text = "Made By Jammsterr707#5642";
+ Text = "Jailbreak Script Loaded.";
  Icon = "";
  Duration = 5;
- Button1 = "Nigga😎";
+ Button1 = "Ok";
  Callback = NotificationBindable;
 })
 	
