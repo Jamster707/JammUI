@@ -1,0 +1,370 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local esp = Instance.new("TextButton")
+local Speed = Instance.new("TextButton")
+local Mod = Instance.new("TextButton")
+local Inf = Instance.new("TextButton")
+local Float = Instance.new("TextButton")
+local Exit = Instance.new("TextButton")
+local Aim = Instance.new("TextButton")
+local Open = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Frame.Position = UDim2.new(0.00565141439, 0, 0.0073710084, 0)
+Frame.Size = UDim2.new(0, 110, 0, 382)
+
+Title.Name = "Title"
+Title.Parent = Frame
+Title.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Title.BorderColor3 = Color3.fromRGB(43, 43, 43)
+Title.Position = UDim2.new(0, 0, 0.0549738221, 0)
+Title.Rotation = -1.000
+Title.Size = UDim2.new(0, 110, 0, 40)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Arsenal"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 14.000
+
+esp.Name = "esp"
+esp.Parent = Frame
+esp.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+esp.Position = UDim2.new(0.181818247, 0, 0.581151783, 0)
+esp.Size = UDim2.new(0, 70, 0, 40)
+esp.Font = Enum.Font.SourceSans
+esp.Text = "Esp"
+esp.TextColor3 = Color3.fromRGB(255, 255, 255)
+esp.TextSize = 14.000
+
+Speed.Name = "Speed"
+Speed.Parent = Frame
+Speed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Speed.Position = UDim2.new(0.181818247, 0, 0.183246076, 0)
+Speed.Size = UDim2.new(0, 70, 0, 40)
+Speed.Font = Enum.Font.SourceSans
+Speed.Text = "Speed (x)"
+Speed.TextColor3 = Color3.fromRGB(255, 255, 255)
+Speed.TextSize = 14.000
+
+Mod.Name = "Mod"
+Mod.Parent = Frame
+Mod.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Mod.Position = UDim2.new(0.181818247, 0, 0.853403091, 0)
+Mod.Size = UDim2.new(0, 70, 0, 40)
+Mod.Font = Enum.Font.SourceSans
+Mod.Text = "Gund Mods"
+Mod.TextColor3 = Color3.fromRGB(255, 255, 255)
+Mod.TextSize = 14.000
+
+Inf.Name = "Inf"
+Inf.Parent = Frame
+Inf.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Inf.Position = UDim2.new(0.181818247, 0, 0.316753954, 0)
+Inf.Size = UDim2.new(0, 70, 0, 40)
+Inf.Font = Enum.Font.SourceSans
+Inf.Text = "Inf Jump"
+Inf.TextColor3 = Color3.fromRGB(255, 255, 255)
+Inf.TextSize = 14.000
+
+Float.Name = "Float"
+Float.Parent = Frame
+Float.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Float.Position = UDim2.new(0.181818247, 0, 0.447643965, 0)
+Float.Size = UDim2.new(0, 70, 0, 40)
+Float.Font = Enum.Font.SourceSans
+Float.Text = "Float (n)"
+Float.TextColor3 = Color3.fromRGB(255, 255, 255)
+Float.TextSize = 14.000
+
+Exit.Name = "Exit"
+Exit.Parent = Frame
+Exit.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Exit.Position = UDim2.new(0.818181813, 0, 0, 0)
+Exit.Size = UDim2.new(0, 20, 0, 18)
+Exit.Font = Enum.Font.SourceSans
+Exit.Text = "X"
+Exit.TextColor3 = Color3.fromRGB(255, 255, 255)
+Exit.TextSize = 14.000
+
+Aim.Name = "Aim"
+Aim.Parent = Frame
+Aim.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Aim.Position = UDim2.new(0.181818247, 0, 0.717277467, 0)
+Aim.Size = UDim2.new(0, 70, 0, 40)
+Aim.Font = Enum.Font.SourceSans
+Aim.Text = "Silent Aim"
+Aim.TextColor3 = Color3.fromRGB(255, 255, 255)
+Aim.TextSize = 14.000
+
+Open.Name = "Open"
+Open.Parent = ScreenGui
+Open.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Open.Position = UDim2.new(0.0368702188, 0, 0.0073710084, 0)
+Open.Size = UDim2.new(0, 68, 0, 27)
+Open.Visible = false
+Open.Font = Enum.Font.SourceSans
+Open.Text = "Open"
+Open.TextColor3 = Color3.fromRGB(255, 255, 255)
+Open.TextSize = 14.000
+
+-- Scripts:
+
+local function EBJJWUJ_fake_script() -- ScreenGui.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui)
+	
+	game.StarterGui:SetCore("SendNotification",  {
+ Title = "Jamm UI";
+ Text = "Arsenal Script Loaded.";
+ Icon = "";
+ Duration = 5;
+ Button1 = "Ok";
+ Callback = NotificationBindable;
+})
+	
+	Open.MouseButton1Down:connect(function()
+      Frame.Visible = true
+      Open.Visible = false
+end)
+	
+	Exit.MouseButton1Down:connect(function()
+      Frame.Visible = false
+      Open.Visible = true
+end)
+
+    Speed.MouseButton1Down:connect(function()
+        local plr = game:GetService("Players").LocalPlayer
+    local char = plr.Character
+    local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+    local hum = char:FindFirstChild("HumanoidRootPart")
+    
+    
+    local plr = game:GetService("Players").LocalPlayer
+    local char = plr.Character
+    local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+    local hum = char:FindFirstChild("HumanoidRootPart")
+    mouse.KeyDown:connect(function(key)
+        if key == "x" then
+            loop = true
+            while loop do
+                hum.CFrame = hum.CFrame + hum.CFrame.lookVector * "2"
+                wait()
+            end
+            end
+            end)
+    local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+    mouse.KeyUp:connect(function(key)
+        if key == "x" then
+            loop = false
+        end
+    end)
+    
+    Inf.MouseButton1Down:connect(function()
+      game:GetService("UserInputService").JumpRequest:connect(function()
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")		
+end)
+
+    Float.MouseButton1Down:connect(function()
+      noclip = false
+game:GetService('RunService').Stepped:Connect(function()
+	if noclip then
+		game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+		
+	end
+end)
+
+local p = game.Players.LocalPlayer
+local mo = p:GetMouse()
+
+mo.KeyDown:Connect(function(k)
+	if k == 'e' then
+		noclip = not noclip
+		p.Character.Humanoid:ChangeState(11)
+	end
+end)
+end)
+
+
+end)
+      
+end)
+    Aim.MouseButton1Down:connect(function()
+        local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local mouse = LocalPlayer:GetMouse()
+local Camera = workspace.CurrentCamera
+local Debris = game:GetService("Debris")
+local UserInputService = game:GetService("UserInputService")
+local target = false
+local RunService = game:GetService("RunService")
+
+
+getfenv().lock = "Random" -- Head or Hitbox or Random
+
+fov = 250;
+local fovCircle = true;
+local st = tonumber(tick());
+warn("Loading script...")
+
+if fovCircle then
+	function createcircle()
+	    local a=Drawing.new('Circle');a.Transparency=1;a.Thickness=1.5;a.Visible=true;a.Color=Color3.fromRGB(0,0,250);a.Filled=false;a.Radius=fov;
+	    return a;
+	end;  
+	local fovc = createcircle();
+	spawn(function()
+	    RunService:BindToRenderStep("FovCircle",1,function()
+	        fovc.Position = Vector2.new(mouse.X,mouse.Y)
+	    end);
+	end);
+end;
+
+function isFfa()
+	local am = #Players:GetChildren();
+	local amm = 0;
+	for i , v in pairs(Players:GetChildren()) do
+		if v.Team == LocalPlayer.Team then
+			amm = amm + 1;
+		end;
+	end;
+	return am == amm;
+end;
+function getnearest()
+	local nearestmagnitude = math.huge
+	local nearestenemy = nil
+	local vector = nil
+	local ffa = isFfa();
+	for i,v in next, Players:GetChildren() do
+		if ffa == false and v.Team ~= LocalPlayer.Team or ffa == true then
+			if v.Character and  v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health > 0 then
+				local vector, onScreen = Camera:WorldToScreenPoint(v.Character["HumanoidRootPart"].Position)
+				if onScreen then
+					local ray = Ray.new(
+					Camera.CFrame.p,
+					(v.Character["Head"].Position-Camera.CFrame.p).unit*500
+					)
+					local ignore = {
+					LocalPlayer.Character,
+					}
+					local hit,position,normal=workspace:FindPartOnRayWithIgnoreList(ray,ignore)
+					if hit and hit:FindFirstAncestorOfClass("Model") and Players:FindFirstChild(hit:FindFirstAncestorOfClass("Model").Name)then
+						local magnitude = (Vector2.new(mouse.X, mouse.Y) - Vector2.new(vector.X, vector.Y)).magnitude
+						if magnitude < nearestmagnitude and magnitude <= fov then
+							nearestenemy = v
+							nearestmagnitude = magnitude
+						end
+					end
+				end
+			end
+		end
+	end
+	return nearestenemy
+end
+
+
+local meta = getrawmetatable(game)
+setreadonly(meta, false)
+local oldNamecall = meta.__namecall
+meta.__namecall = newcclosure(function(...)
+    
+	local method = getnamecallmethod()
+	local args = {...}
+	if string.find(method,'Ray') then
+		if target then
+		    if args[1].Name ~= "Workspace" then
+   		        print(args[1])
+   		    end;
+			args[2] = Ray.new(workspace.CurrentCamera.CFrame.Position, (target.Position + Vector3.new(0,(workspace.CurrentCamera.CFrame.Position-target.Position).Magnitude/500,0) - workspace.CurrentCamera.CFrame.Position).unit * 5000)
+		end
+	end
+	return oldNamecall(unpack(args))
+end)
+
+warn("Script loaded!\nTime taken: "..math.abs(tonumber(tick())-st))
+RunService:BindToRenderStep("SilentAim",1,function()
+	if UserInputService:IsMouseButtonPressed(0) and Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("Humanoid") and Players.LocalPlayer.Character.Humanoid.Health > 0 then
+		local enemy = getnearest()
+		if enemy and enemy.Character and enemy.Character:FindFirstChild("Humanoid") and enemy.Character.Humanoid.Health > 0 then                
+			local vector, onScreen = Camera:WorldToScreenPoint(enemy.Character["Head"].Position)
+			local head = (Vector2.new(mouse.X, mouse.Y) - Vector2.new(vector.X, vector.Y)).magnitude
+			local vector, onScreen = Camera:WorldToScreenPoint(enemy.Character["HumanoidRootPart"].Position)
+			local hitbox = (Vector2.new(mouse.X, mouse.Y) - Vector2.new(vector.X, vector.Y)).magnitude
+			if head <= hitbox then
+				magnitude = head
+			else
+				magnitude = hitbox;
+			end;
+			if getfenv().lock == "Head" then
+				target = workspace[enemy.Name]["Head"]
+			else
+				if getfenv().lock == "Random" then
+					if magnitude == hitbox then
+						target = workspace[enemy.Name]["HumanoidRootPart"];
+					else
+						target = workspace[enemy.Name]["Head"]
+					end;
+				else
+					target = workspace[enemy.Name]["HumanoidRootPart"];
+				end;
+
+			end;
+		else
+			target = nil
+		end
+	end
+end)
+    end)
+    
+        esp.MouseButton1Down:connect(function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/kvr0AuWz"))();
+        end)
+        
+
+    Mod.MouseButton1Down:connect(function()
+      local Functions = {}
+	for i,v in pairs(getreg()) do
+		if type(v) == "function" then
+			for i2,v2 in pairs(getfenv(v)) do
+				if type(v2) == "function" then
+					Functions[tostring(i2)] = v2
+				end
+			end
+		end
+	end
+
+	function GetLocalWeapon()
+		return getfenv(Functions.usethatgun).gun
+	end
+
+	game:GetService("RunService"):BindToRenderStep("gunmodsarecool", 1, function()
+		getfenv(Functions.usethatgun).currentspread = 0 -- NoSpread
+
+		getfenv(Functions.usethatgun).recoil = 0 -- NoRecoil
+
+		if GetLocalWeapon() ~= "none" and GetLocalWeapon():FindFirstChild("Ammo") then -- Inf Ammo
+			debug.setupvalue(Functions["updateInventory"], 3, GetLocalWeapon():FindFirstChild("Ammo").Value)
+		end
+
+		if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Spawned") and game:GetService("UserInputService"):IsMouseButtonPressed(Enum.UserInputType.MouseButton1) then -- RapidFire
+			if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health ~= 0 and game.Players.LocalPlayer.Character:FindFirstChild("Spawned") then
+				pcall(function()
+					Functions.firebullet(true)
+				end)
+			end
+		end
+	end)
+end)
+
+
+end
+coroutine.wrap(EBJJWUJ_fake_script)()
