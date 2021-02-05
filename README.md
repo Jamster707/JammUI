@@ -2,3 +2,5 @@
 Gui For Roblox games
 
 i made all of the scripts apart from the esp and autorob. :)
+
+i recommend using the "loader" for all of the scripts as its just easier and upates automatically.
