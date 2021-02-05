@@ -117,6 +117,16 @@ nil2.TextSize = 14.000
 local function LPXPEV_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 	
+	game.StarterGui:SetCore("SendNotification",  {
+ Title = "Jamm UI";
+ Text = "Made By Jammsterr707#5642";
+ Icon = "";
+ Duration = 5;
+ Button1 = "Ok";
+ Callback = NotificationBindable;
+})
+end)
+	
 	Exit1.MouseButton1Down:connect(function()
       Welcome.Visible = false
 end)
