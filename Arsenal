@@ -83,7 +83,7 @@ Float.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Float.Position = UDim2.new(0.181818247, 0, 0.447643965, 0)
 Float.Size = UDim2.new(0, 70, 0, 40)
 Float.Font = Enum.Font.SourceSans
-Float.Text = "Float (n)"
+Float.Text = "Float (e)"
 Float.TextColor3 = Color3.fromRGB(255, 255, 255)
 Float.TextSize = 14.000
 
