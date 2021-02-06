@@ -1,7 +1,7 @@
 # JammUI
 Gui For Roblox games
 
-i made all of the scripts apart from the esp and autorob. :)
+i made all of the scripts apart from the esp, autorob and dupe gui.
 
 i recommend using the "loader" for all of the scripts as its just easier and upates automatically.
 
@@ -13,6 +13,6 @@ Jailbreak
 
 Arsenal
 
-Phantom Forces [Soon]
+Lumber tycoon 2
 
-Lumber tycoon 2 [soon]
+Phantom Forces [Soon]
