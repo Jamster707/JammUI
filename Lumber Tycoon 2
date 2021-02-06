@@ -1,0 +1,351 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Speed = Instance.new("TextButton")
+local Dupe = Instance.new("TextButton")
+local Bp = Instance.new("TextButton")
+local Noclip = Instance.new("TextButton")
+local Fly = Instance.new("TextButton")
+local Inf = Instance.new("TextButton")
+local Exit = Instance.new("TextButton")
+local Open = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Frame.Position = UDim2.new(0.902798653, 0, 0.0565110557, 0)
+Frame.Size = UDim2.new(0, 110, 0, 382)
+
+Title.Name = "Title"
+Title.Parent = Frame
+Title.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Title.Position = UDim2.new(0, 0, 0.0471204147, 0)
+Title.Size = UDim2.new(0, 110, 0, 40)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Lumber Tycoon 2"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 14.000
+
+Speed.Name = "Speed"
+Speed.Parent = Frame
+Speed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Speed.Position = UDim2.new(0.181818247, 0, 0.183246076, 0)
+Speed.Size = UDim2.new(0, 70, 0, 40)
+Speed.Font = Enum.Font.SourceSans
+Speed.Text = "Speed (x)"
+Speed.TextColor3 = Color3.fromRGB(255, 255, 255)
+Speed.TextSize = 14.000
+
+Dupe.Name = "Dupe"
+Dupe.Parent = Frame
+Dupe.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Dupe.Position = UDim2.new(0.181818247, 0, 0.853403091, 0)
+Dupe.Size = UDim2.new(0, 70, 0, 40)
+Dupe.Font = Enum.Font.SourceSans
+Dupe.Text = "Dupe Gui"
+Dupe.TextColor3 = Color3.fromRGB(255, 255, 255)
+Dupe.TextSize = 14.000
+
+Bp.Name = "Bp"
+Bp.Parent = Frame
+Bp.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Bp.Position = UDim2.new(0.181818247, 0, 0.717277467, 0)
+Bp.Size = UDim2.new(0, 70, 0, 40)
+Bp.Font = Enum.Font.SourceSans
+Bp.Text = "Blueprints"
+Bp.TextColor3 = Color3.fromRGB(255, 255, 255)
+Bp.TextSize = 14.000
+
+Noclip.Name = "Noclip"
+Noclip.Parent = Frame
+Noclip.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Noclip.Position = UDim2.new(0.181818247, 0, 0.581151783, 0)
+Noclip.Size = UDim2.new(0, 70, 0, 40)
+Noclip.Font = Enum.Font.SourceSans
+Noclip.Text = "Nolcip (e)"
+Noclip.TextColor3 = Color3.fromRGB(255, 255, 255)
+Noclip.TextSize = 14.000
+
+Fly.Name = "Fly"
+Fly.Parent = Frame
+Fly.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Fly.Position = UDim2.new(0.181818247, 0, 0.447643965, 0)
+Fly.Size = UDim2.new(0, 70, 0, 40)
+Fly.Font = Enum.Font.SourceSans
+Fly.Text = "Fly (f)"
+Fly.TextColor3 = Color3.fromRGB(255, 255, 255)
+Fly.TextSize = 14.000
+
+Inf.Name = "Inf"
+Inf.Parent = Frame
+Inf.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Inf.Position = UDim2.new(0.181818247, 0, 0.316753954, 0)
+Inf.Size = UDim2.new(0, 70, 0, 40)
+Inf.Font = Enum.Font.SourceSans
+Inf.Text = "Inf Jump"
+Inf.TextColor3 = Color3.fromRGB(255, 255, 255)
+Inf.TextSize = 14.000
+
+Exit.Name = "Exit"
+Exit.Parent = Frame
+Exit.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Exit.Position = UDim2.new(0.818181813, 0, 0, 0)
+Exit.Size = UDim2.new(0, 20, 0, 18)
+Exit.Font = Enum.Font.SourceSans
+Exit.Text = "X"
+Exit.TextColor3 = Color3.fromRGB(255, 255, 255)
+Exit.TextSize = 14.000
+
+Open.Name = "Open"
+Open.Parent = ScreenGui
+Open.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Open.Position = UDim2.new(0.957207203, 0, 0.0122850118, 0)
+Open.Size = UDim2.new(0, 57, 0, 22)
+Open.Visible = false
+Open.Font = Enum.Font.SourceSans
+Open.Text = "Open"
+Open.TextColor3 = Color3.fromRGB(255, 255, 255)
+Open.TextSize = 14.000
+
+-- Scripts:
+
+local function UBYCL_fake_script() -- ScreenGui.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui)
+	
+	
+	game.StarterGui:SetCore("SendNotification",  {
+ Title = "Jamm UI";
+ Text = "Lumber Tycoon 2 Script Loaded.";
+ Icon = "";
+ Duration = 5;
+ Button1 = "Ok";
+ Callback = NotificationBindable;
+})
+	
+	Exit.MouseButton1Down:connect(function()
+      Frame.Visible = false
+      Open.Visible = true
+end)
+	
+	Open.MouseButton1Down:connect(function()
+      Frame.Visible = true
+      Open.Visible = false
+end)
+
+    Speed.MouseButton1Down:connect(function()
+        
+      local walkspeedplayer = game:GetService("Players").LocalPlayer
+        local walkspeedmouse = walkspeedplayer:GetMouse()
+       
+        local walkspeedenabled = false
+       
+        function x_walkspeed(key)
+            if (key == "x") then
+                if walkspeedenabled == false then
+                    _G.WS = 200;
+                    local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid;
+                    Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
+                    Humanoid.WalkSpeed = _G.WS;
+                    end)
+                    Humanoid.WalkSpeed = _G.WS;
+                   
+                    walkspeedenabled = true
+                elseif walkspeedenabled == true then
+                    _G.WS = 20;
+                    local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid;
+                    Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
+                    Humanoid.WalkSpeed = _G.WS;
+                    end)
+                    Humanoid.WalkSpeed = _G.WS;
+                   
+                    walkspeedenabled = false
+                end
+            end
+        end
+       
+        walkspeedmouse.KeyDown:connect(x_walkspeed)
+       
+    end)
+    
+    Fly.MouseButton1Down:connect(function()
+        
+       repeat wait()
+        until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Torso") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid")
+    local mouse = game.Players.LocalPlayer:GetMouse()
+    repeat wait() until mouse
+    local plr = game.Players.LocalPlayer
+    local torso = plr.Character.Torso
+    local flying = true
+    local deb = true
+    local ctrl = {f = 0, b = 0, l = 0, r = 0}
+    local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+    local maxspeed = 50
+    local speed = 0
+     
+    function fly()
+    local bg = Instance.new("BodyGyro", torso)
+    bg.P = 9e4
+    bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+    bg.cframe = torso.CFrame
+    local bv = Instance.new("BodyVelocity", torso)
+    bv.velocity = Vector3.new(0,0.1,0)
+    bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+    repeat wait()
+    plr.Character.Humanoid.PlatformStand = true
+    if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+    speed = speed+.5+(speed/maxspeed)
+    if speed > maxspeed then
+    speed = maxspeed
+    end
+    elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+    speed = speed-1
+    if speed < 0 then
+    speed = 0
+    end
+    end
+    if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+    bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+    lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+    elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+    bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+    else
+    bv.velocity = Vector3.new(0,0.1,0)
+    end
+    bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
+    until not flying
+    ctrl = {f = 0, b = 0, l = 0, r = 0}
+    lastctrl = {f = 0, b = 0, l = 0, r = 0}
+    speed = 0
+    bg:Destroy()
+    bv:Destroy()
+    plr.Character.Humanoid.PlatformStand = false
+    end
+    mouse.KeyDown:connect(function(key)
+    if key:lower() == "f" then
+    if flying then flying = false
+    else
+    flying = true
+    fly()
+    end
+    elseif key:lower() == "w" then
+    ctrl.f = 1
+    elseif key:lower() == "s" then
+    ctrl.b = -1
+    elseif key:lower() == "a" then
+    ctrl.l = -1
+    elseif key:lower() == "d" then
+    ctrl.r = 1
+    end
+    end)
+    mouse.KeyUp:connect(function(key)
+    if key:lower() == "w" then
+    ctrl.f = 0
+    elseif key:lower() == "s" then
+    ctrl.b = 0
+    elseif key:lower() == "a" then
+    ctrl.l = 0
+    elseif key:lower() == "d" then
+    ctrl.r = 0
+    end
+    end)
+    fly()
+
+   
+end)
+
+    Inf.MouseButton1Down:connect(function()
+      game:GetService("UserInputService").JumpRequest:connect(function()
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")		
+end)
+
+end)
+
+    Noclip.MouseButton1Down:connect(function()
+        
+        noclip = false
+game:GetService('RunService').Stepped:Connect(function()
+	if noclip then
+		game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+		
+	end
+end)
+
+local p = game.Players.LocalPlayer
+local mo = p:GetMouse()
+
+mo.KeyDown:Connect(function(k)
+	if k == 'e' then
+		noclip = not noclip
+		p.Character.Humanoid:ChangeState(11)
+	end
+end)
+      
+end)
+
+    Bp.MouseButton1Down:connect(function()
+        
+        for i,v in pairs(game.ReplicatedStorage.Purchasables.Structures.BlueprintStructures:GetChildren()) do
+    local clone = v:Clone()
+    clone.Parent = game.Players.LocalPlayer.PlayerBlueprints.Blueprints
+    end
+      
+end)
+
+    Dupe.MouseButton1Down:connect(function()
+      local library = loadstring(game:HttpGet("https://pastebin.com/raw/CkyR8ePz", true))()
+randplr = nil
+slot = nil
+local w = library:CreateWindow('Money')
+local w2 = library:CreateWindow('Slots')
+local box = w2:Box('Slot:', {
+   flag = "slot";
+   type = 'number';
+}, function(new, old, enter)
+
+slot = tonumber(new)
+end)
+local button2 = w2:Button("Load", function()
+
+
+game:GetService("ReplicatedStorage").LoadSaveRequests.ClientMayLoad:InvokeServer(game:GetService("Players").LocalPlayer)
+local tbl_main = 
+{
+      slot, 
+      game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").LoadSaveRequests.RequestLoad:InvokeServer(unpack(tbl_main))
+
+end)
+
+local button1 = w:Button("Send Money", function()
+Money = game.Players.LocalPlayer.leaderstats.Money.Value
+for i,v in pairs(game.Players:GetPlayers()) do
+if v.Name ~= game.Players.LocalPlayer.Name then
+randplr = v
+break
+end
+end
+local tbl = 
+{
+      randplr, 
+      Money, 
+      1
+}
+game:GetService("ReplicatedStorage").Transactions.ClientToServer.Donate:InvokeServer(unpack(tbl))
+end)
+end)
+
+
+
+	
+end
+coroutine.wrap(UBYCL_fake_script)()
