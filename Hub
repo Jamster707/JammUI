@@ -16,5 +16,8 @@ if game.PlaceId == 606849621 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Jamster707/JammUI/main/Jailbreak"))();
 end
 
+if game.PlaceId == 13822889 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Jamster707/JammUI/main/Lumber%20Tycoon%202"))();
+end
 
     
