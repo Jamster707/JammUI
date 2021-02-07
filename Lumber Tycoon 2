@@ -648,7 +648,7 @@ RemoveTree.BorderColor3 = Color3.fromRGB(33, 33, 33)
 RemoveTree.Position = UDim2.new(0.507936537, 0, 0.656084657, 0)
 RemoveTree.Size = UDim2.new(0, 107, 0, 36)
 RemoveTree.Font = Enum.Font.SourceSans
-RemoveTree.Text = "[coming soon]
+RemoveTree.Text = "[coming soon]"
 RemoveTree.TextColor3 = Color3.fromRGB(255, 255, 255)
 RemoveTree.TextSize = 14.000
 
