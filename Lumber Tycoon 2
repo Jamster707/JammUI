@@ -338,7 +338,7 @@ Wipe.BorderColor3 = Color3.fromRGB(33, 33, 33)
 Wipe.Position = UDim2.new(0.511904776, 0, 0.746031761, 0)
 Wipe.Size = UDim2.new(0, 107, 0, 36)
 Wipe.Font = Enum.Font.SourceSans
-Wipe.Text = "Wipe Base"
+Wipe.Text = "TP To Base"
 Wipe.TextColor3 = Color3.fromRGB(255, 255, 255)
 Wipe.TextSize = 14.000
 
@@ -1046,17 +1046,11 @@ end)
     end)
 
    Wipe.MouseButton1Down:connect(function()
-       local plr = game.Players.LocalPlayer
-	local torso = plr.Character.HumanoidRootPart
-	
-	local delaybeweenchecks = 0.5
-	local opendistance = 10
-	
-	for i, v in pairs(game:GetService("Workspace").Stores.ShopItems:GetChildren()) do
-	local A_1 = v
-	local Event = game:GetService("ReplicatedStorage").Interaction.ClientIsDragging
-	Event:FireServer(A_1)
-	end
+       for i,v in pairs(game.Workspace.Properties:GetChildren()) do
+		        if v.Owner.Value == game.Players.LocalPlayer then
+		            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.OriginSquare.CFrame + Vector3.new(0,10,0)
+		        end
+		    end
 end)
 
    TpWood.MouseButton1Down:connect(function()
