@@ -103,7 +103,7 @@ Noclip.BorderColor3 = Color3.fromRGB(33, 33, 33)
 Noclip.Position = UDim2.new(0.658730209, 0, 0.0317460336, 0)
 Noclip.Size = UDim2.new(0, 75, 0, 45)
 Noclip.Font = Enum.Font.SourceSans
-Noclip.Text = "Noclip (e)"
+Noclip.Text = "Noclip (n)"
 Noclip.TextColor3 = Color3.fromRGB(255, 255, 255)
 Noclip.TextSize = 14.000
 
@@ -125,7 +125,7 @@ Fly.BorderColor3 = Color3.fromRGB(33, 33, 33)
 Fly.Position = UDim2.new(0.0317460336, 0, 0.365079343, 0)
 Fly.Size = UDim2.new(0, 75, 0, 45)
 Fly.Font = Enum.Font.SourceSans
-Fly.Text = "Fly"
+Fly.Text = "Fly (f)"
 Fly.TextColor3 = Color3.fromRGB(255, 255, 255)
 Fly.TextSize = 14.000
 
@@ -648,7 +648,7 @@ RemoveTree.BorderColor3 = Color3.fromRGB(33, 33, 33)
 RemoveTree.Position = UDim2.new(0.507936537, 0, 0.656084657, 0)
 RemoveTree.Size = UDim2.new(0, 107, 0, 36)
 RemoveTree.Font = Enum.Font.SourceSans
-RemoveTree.Text = "[coming soon]"
+RemoveTree.Text = "Bring Wood Gui"
 RemoveTree.TextColor3 = Color3.fromRGB(255, 255, 255)
 RemoveTree.TextSize = 14.000
 
@@ -688,6 +688,19 @@ local function YKNS_fake_script() -- ScreenGui.LocalScript
  Button1 = "Ok";
  Callback = NotificationBindable;
 })
+	
+	CredT.MouseButton1Down:connect(function()
+	    sendNotice = game.ReplicatedStorage.Notices.SendUserNotice
+				sendNotice:Fire("Made By Jammsterr707#5642")
+				local ButtonPress
+				ButtonPress = game.Players.LocalPlayer:GetMouse().Button1Down:Connect(function()
+					Square = game.Players.LocalPlayer:GetMouse().Target
+					if (Square.Name == "OriginSquare" or Square.Name == "Square") then
+						ButtonPress:Disconnect()
+					end
+				end)
+	end)
+			
 	
 	Min.MouseButton1Down:connect(function()
       TextLabel.Visible = false
@@ -875,7 +888,7 @@ local p = game.Players.LocalPlayer
 local mo = p:GetMouse()
 
 mo.KeyDown:Connect(function(k)
-	if k == 'e' then
+	if k == 'n' then
 		noclip = not noclip
 		p.Character.Humanoid:ChangeState(11)
 	end
@@ -1081,29 +1094,8 @@ end)
 	end
 end)
 
-   SellWood.MouseButton1Down:connect(function()
-       for _, Log in pairs(workspace.LogModels:GetChildren()) do
-        if Log.Name:sub(1, 6) == "Loose_" and Log:findFirstChild("Owner") then
-            if Log.Owner.Value == game.Players.LocalPlayer then
-                for i,v in pairs(Log:GetChildren()) do
-                    if v.Name=="WoodSection" then
-                        spawn(function()
-                            for i=1,10 do
-                                wait()
-                                v.CFrame=CFrame.new(Vector3.new(315, -0.296, 85.791))*CFrame.Angles(math.rad(90),0,0)
-                            end
-                        end)
-                    end
-                end
-                spawn(function()
-                    for i=1,20 do
-                        wait()
-                        game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(Log)
-                    end
-                end)
-            end
-        end
-    end
+   RemoveTree.MouseButton1Down:connect(function()
+       loadstring(game:HttpGet("https://pastebin.com/raw/RX4gDpgz"))();
 end)
 
    SellWood.MouseButton1Down:connect(function()
