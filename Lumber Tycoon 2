@@ -69,7 +69,8 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 TextLabel.Parent = ScreenGui
 TextLabel.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
-TextLabel.Position = UDim2.new(0.762762785, 0, 0.323411107, 0)
+TextLabel.BorderColor3 = Color3.fromRGB(33, 33, 33)
+TextLabel.Position = UDim2.new(0.545795798, 0, 0.318101376, 0)
 TextLabel.Size = UDim2.new(0, 244, 0, 35)
 TextLabel.Font = Enum.Font.SourceSans
 TextLabel.Text = "JammUI"
@@ -84,6 +85,7 @@ Main.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
 Main.BorderColor3 = Color3.fromRGB(43, 43, 43)
 Main.Position = UDim2.new(0.176193222, 0, 0.999999821, 0)
 Main.Size = UDim2.new(0, 252, 0, 189)
+Main.Visible = false
 
 Speed.Name = "Speed"
 Speed.Parent = Main
@@ -210,8 +212,8 @@ Menu.Name = "Menu"
 Menu.Parent = TextLabel
 Menu.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 Menu.BorderColor3 = Color3.fromRGB(33, 33, 33)
-Menu.Position = UDim2.new(-0.000289416697, 0, 0.971428573, 0)
-Menu.Size = UDim2.new(0, 43, 0, 190)
+Menu.Position = UDim2.new(0, 0, 0.97142899, 0)
+Menu.Size = UDim2.new(0, 42, 0, 190)
 
 MainT.Name = "MainT"
 MainT.Parent = Menu
@@ -338,7 +340,7 @@ Wipe.BorderColor3 = Color3.fromRGB(33, 33, 33)
 Wipe.Position = UDim2.new(0.511904776, 0, 0.746031761, 0)
 Wipe.Size = UDim2.new(0, 107, 0, 36)
 Wipe.Font = Enum.Font.SourceSans
-Wipe.Text = "TP To Base"
+Wipe.Text = "Tp To Base"
 Wipe.TextColor3 = Color3.fromRGB(255, 255, 255)
 Wipe.TextSize = 14.000
 
@@ -617,7 +619,6 @@ Wood.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
 Wood.BorderColor3 = Color3.fromRGB(43, 43, 43)
 Wood.Position = UDim2.new(0.176193222, 0, 0.999999821, 0)
 Wood.Size = UDim2.new(0, 252, 0, 189)
-Wood.Visible = false
 
 TpWood.Name = "TpWood"
 TpWood.Parent = Wood
@@ -677,7 +678,7 @@ Open.TextSize = 14.000
 
 -- Scripts:
 
-local function YKNS_fake_script() -- ScreenGui.LocalScript 
+local function PPETP_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	game.StarterGui:SetCore("SendNotification",  {
@@ -1293,5 +1294,9 @@ end)
 
        
 	
+
+	
+	
+	
 end
-coroutine.wrap(YKNS_fake_script)()
+coroutine.wrap(PPETP_fake_script)()
