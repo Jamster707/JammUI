@@ -4,15 +4,19 @@
 -- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+local Min = Instance.new("TextButton")
+local Exit = Instance.new("TextButton")
 local Frame = Instance.new("Frame")
-local Title = Instance.new("TextLabel")
 local Speed = Instance.new("TextButton")
-local Rob = Instance.new("TextButton")
-local Del = Instance.new("TextButton")
-local Weapon = Instance.new("TextButton")
 local Fly = Instance.new("TextButton")
 local Inf = Instance.new("TextButton")
-local Exit = Instance.new("TextButton")
+local Del = Instance.new("TextButton")
+local Door = Instance.new("TextButton")
+local Weapon = Instance.new("TextButton")
+local Rob = Instance.new("TextButton")
+local Lesp = Instance.new("TextButton")
+local esp = Instance.new("TextButton")
 local Open = Instance.new("TextButton")
 
 --Properties:
@@ -20,66 +24,63 @@ local Open = Instance.new("TextButton")
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-Frame.Position = UDim2.new(0.903549373, 0, 0.0565110557, 0)
-Frame.Size = UDim2.new(0, 110, 0, 382)
+TextLabel.Parent = ScreenGui
+TextLabel.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+TextLabel.BorderColor3 = Color3.fromRGB(33, 33, 33)
+TextLabel.Position = UDim2.new(0.327327341, 0, 0.235398233, 0)
+TextLabel.Size = UDim2.new(0, 244, 0, 35)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "JammUI"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
+TextLabel.Active = true
+TextLabel.Draggable = true
 
-Title.Name = "Title"
-Title.Parent = Frame
-Title.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-Title.Position = UDim2.new(0, 0, 0.0471204147, 0)
-Title.Size = UDim2.new(0, 110, 0, 40)
-Title.Font = Enum.Font.SourceSans
-Title.Text = "Jailbreak"
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextSize = 14.000
+Min.Name = "Min"
+Min.Parent = TextLabel
+Min.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Min.BorderColor3 = Color3.fromRGB(33, 33, 33)
+Min.Position = UDim2.new(1, 0, 0, 0)
+Min.Size = UDim2.new(0, 25, 0, 33)
+Min.Font = Enum.Font.SourceSans
+Min.Text = "-"
+Min.TextColor3 = Color3.fromRGB(255, 255, 255)
+Min.TextSize = 14.000
+
+Exit.Name = "Exit"
+Exit.Parent = TextLabel
+Exit.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Exit.BorderColor3 = Color3.fromRGB(33, 33, 33)
+Exit.Position = UDim2.new(1.10730076, 0, 0, 0)
+Exit.Size = UDim2.new(0, 24.5, 0, 33)
+Exit.Font = Enum.Font.SourceSans
+Exit.Text = "X"
+Exit.TextColor3 = Color3.fromRGB(255, 255, 255)
+Exit.TextSize = 14.000
+
+Frame.Parent = TextLabel
+Frame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Frame.BorderColor3 = Color3.fromRGB(43, 43, 43)
+Frame.Position = UDim2.new(0, 0, 1, 0)
+Frame.Size = UDim2.new(0, 295, 0, 189)
 
 Speed.Name = "Speed"
 Speed.Parent = Frame
-Speed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Speed.Position = UDim2.new(0.181818247, 0, 0.183246076, 0)
-Speed.Size = UDim2.new(0, 70, 0, 40)
+Speed.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Speed.BorderColor3 = Color3.fromRGB(33, 33, 33)
+Speed.Position = UDim2.new(0.0508474596, 0, 0.0793650746, 0)
+Speed.Size = UDim2.new(0, 75, 0, 35)
 Speed.Font = Enum.Font.SourceSans
 Speed.Text = "Speed (q)"
 Speed.TextColor3 = Color3.fromRGB(255, 255, 255)
 Speed.TextSize = 14.000
 
-Rob.Name = "Rob"
-Rob.Parent = Frame
-Rob.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Rob.Position = UDim2.new(0.181818247, 0, 0.853403091, 0)
-Rob.Size = UDim2.new(0, 70, 0, 40)
-Rob.Font = Enum.Font.SourceSans
-Rob.Text = "Auto Rob"
-Rob.TextColor3 = Color3.fromRGB(255, 255, 255)
-Rob.TextSize = 14.000
-
-Del.Name = "Del"
-Del.Parent = Frame
-Del.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Del.Position = UDim2.new(0.181818247, 0, 0.717277467, 0)
-Del.Size = UDim2.new(0, 70, 0, 40)
-Del.Font = Enum.Font.SourceSans
-Del.Text = "Ctrl Del"
-Del.TextColor3 = Color3.fromRGB(255, 255, 255)
-Del.TextSize = 14.000
-
-Weapon.Name = "Weapon"
-Weapon.Parent = Frame
-Weapon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Weapon.Position = UDim2.new(0.181818247, 0, 0.581151783, 0)
-Weapon.Size = UDim2.new(0, 70, 0, 40)
-Weapon.Font = Enum.Font.SourceSans
-Weapon.Text = "Get Guns"
-Weapon.TextColor3 = Color3.fromRGB(255, 255, 255)
-Weapon.TextSize = 14.000
-
 Fly.Name = "Fly"
 Fly.Parent = Frame
-Fly.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Fly.Position = UDim2.new(0.181818247, 0, 0.447643965, 0)
-Fly.Size = UDim2.new(0, 70, 0, 40)
+Fly.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Fly.BorderColor3 = Color3.fromRGB(33, 33, 33)
+Fly.Position = UDim2.new(0.694915295, 0, 0.0793650746, 0)
+Fly.Size = UDim2.new(0, 75, 0, 35)
 Fly.Font = Enum.Font.SourceSans
 Fly.Text = "Car Fly (x)"
 Fly.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -87,29 +88,87 @@ Fly.TextSize = 14.000
 
 Inf.Name = "Inf"
 Inf.Parent = Frame
-Inf.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Inf.Position = UDim2.new(0.181818247, 0, 0.316753954, 0)
-Inf.Size = UDim2.new(0, 70, 0, 40)
+Inf.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Inf.BorderColor3 = Color3.fromRGB(33, 33, 33)
+Inf.Position = UDim2.new(0.372881383, 0, 0.0793650746, 0)
+Inf.Size = UDim2.new(0, 75, 0, 35)
 Inf.Font = Enum.Font.SourceSans
 Inf.Text = "Inf Jump"
 Inf.TextColor3 = Color3.fromRGB(255, 255, 255)
 Inf.TextSize = 14.000
 
-Exit.Name = "Exit"
-Exit.Parent = Frame
-Exit.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Exit.Position = UDim2.new(0.818181813, 0, 0, 0)
-Exit.Size = UDim2.new(0, 20, 0, 18)
-Exit.Font = Enum.Font.SourceSans
-Exit.Text = "X"
-Exit.TextColor3 = Color3.fromRGB(255, 255, 255)
-Exit.TextSize = 14.000
+Del.Name = "Del"
+Del.Parent = Frame
+Del.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Del.BorderColor3 = Color3.fromRGB(33, 33, 33)
+Del.Position = UDim2.new(0.0508474596, 0, 0.407407403, 0)
+Del.Size = UDim2.new(0, 75, 0, 35)
+Del.Font = Enum.Font.SourceSans
+Del.Text = "Ctrl Del"
+Del.TextColor3 = Color3.fromRGB(255, 255, 255)
+Del.TextSize = 14.000
+
+Door.Name = "Door"
+Door.Parent = Frame
+Door.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Door.BorderColor3 = Color3.fromRGB(33, 33, 33)
+Door.Position = UDim2.new(0.372881383, 0, 0.407407403, 0)
+Door.Size = UDim2.new(0, 75, 0, 35)
+Door.Font = Enum.Font.SourceSans
+Door.Text = "No Doors"
+Door.TextColor3 = Color3.fromRGB(255, 255, 255)
+Door.TextSize = 14.000
+
+Weapon.Name = "Weapon"
+Weapon.Parent = Frame
+Weapon.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Weapon.BorderColor3 = Color3.fromRGB(33, 33, 33)
+Weapon.Position = UDim2.new(0.694915295, 0, 0.407407403, 0)
+Weapon.Size = UDim2.new(0, 75, 0, 35)
+Weapon.Font = Enum.Font.SourceSans
+Weapon.Text = "Get Guns"
+Weapon.TextColor3 = Color3.fromRGB(255, 255, 255)
+Weapon.TextSize = 14.000
+
+Rob.Name = "Rob"
+Rob.Parent = Frame
+Rob.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Rob.BorderColor3 = Color3.fromRGB(33, 33, 33)
+Rob.Position = UDim2.new(0.0508474596, 0, 0.730158746, 0)
+Rob.Size = UDim2.new(0, 75, 0, 35)
+Rob.Font = Enum.Font.SourceSans
+Rob.Text = "Auto Rob"
+Rob.TextColor3 = Color3.fromRGB(255, 255, 255)
+Rob.TextSize = 14.000
+
+Lesp.Name = "Lesp"
+Lesp.Parent = Frame
+Lesp.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Lesp.BorderColor3 = Color3.fromRGB(33, 33, 33)
+Lesp.Position = UDim2.new(0.694915295, 0, 0.730158746, 0)
+Lesp.Size = UDim2.new(0, 75, 0, 35)
+Lesp.Font = Enum.Font.SourceSans
+Lesp.Text = "[]"
+Lesp.TextColor3 = Color3.fromRGB(255, 255, 255)
+Lesp.TextSize = 14.000
+
+esp.Name = "esp"
+esp.Parent = Frame
+esp.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+esp.BorderColor3 = Color3.fromRGB(33, 33, 33)
+esp.Position = UDim2.new(0.372881383, 0, 0.730158746, 0)
+esp.Size = UDim2.new(0, 75, 0, 35)
+esp.Font = Enum.Font.SourceSans
+esp.Text = "[]"
+esp.TextColor3 = Color3.fromRGB(255, 255, 255)
+esp.TextSize = 14.000
 
 Open.Name = "Open"
 Open.Parent = ScreenGui
-Open.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Open.Position = UDim2.new(0.947530866, 0, 0, 0)
-Open.Size = UDim2.new(0, 68, 0, 27)
+Open.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Open.BorderColor3 = Color3.fromRGB(33, 33, 33)
+Open.Position = UDim2.new(0.887387276, 0, 0.945945919, 0)
+Open.Size = UDim2.new(0, 79, 0, 31)
 Open.Visible = false
 Open.Font = Enum.Font.SourceSans
 Open.Text = "Open"
@@ -118,9 +177,9 @@ Open.TextSize = 14.000
 
 -- Scripts:
 
-local function FNQYXN_fake_script() -- ScreenGui.LocalScript 
+local function QPOLMF_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
-	
+
 	game.StarterGui:SetCore("SendNotification",  {
  Title = "Jamm UI";
  Text = "Jailbreak Script Loaded.";
@@ -131,14 +190,25 @@ local function FNQYXN_fake_script() -- ScreenGui.LocalScript
 })
 	
 	Open.MouseButton1Down:connect(function()
-      Frame.Visible = true
+      TextLabel.Visible = true
       Open.Visible = false
 end)
 	
 	Exit.MouseButton1Down:connect(function()
-      Frame.Visible = false
+      TextLabel.Visible = false
+      Open.Visible = false
+end)
+
+    Min.MouseButton1Down:connect(function()
+      TextLabel.Visible = false
       Open.Visible = true
 end)
+
+
+    Door.MouseButton1Down:connect(function()
+        local Doors = workspace.Doors
+			Doors.Parent = game.StarterGui
+    end)
 
 
    
@@ -357,6 +427,6 @@ Mouse.Target:Destroy()
 end)
 end)
 
-	
+	    
 end
-coroutine.wrap(FNQYXN_fake_script)()
+coroutine.wrap(QPOLMF_fake_script)()
