@@ -179,7 +179,16 @@ Open.TextSize = 14.000
 
 local function UKFFE_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
-
+        
+	game.StarterGui:SetCore("SendNotification",  {
+ Title = "Jamm UI";
+ Text = "Phantom Forces Script Loaded.";
+ Icon = "";
+ Duration = 5;
+ Button1 = "Ok";
+ Callback = NotificationBindable;
+})
+	
 	Exit.MouseButton1Down:connect(function()
 	    TextLabel.Visible = false
 	    Open.Visible = false
