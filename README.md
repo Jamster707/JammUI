@@ -14,3 +14,5 @@ Arsenal
 Lumber tycoon 2
 
 Phantom Forces 
+
+Note: The autorob script on jailbreak will most likely get you banned.
