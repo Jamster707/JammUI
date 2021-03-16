@@ -137,7 +137,7 @@ Rob.BorderColor3 = Color3.fromRGB(33, 33, 33)
 Rob.Position = UDim2.new(0.0508474596, 0, 0.730158746, 0)
 Rob.Size = UDim2.new(0, 75, 0, 35)
 Rob.Font = Enum.Font.SourceSans
-Rob.Text = "Car Float [Z]"
+Rob.Text = "Car Float (Z)"
 Rob.TextColor3 = Color3.fromRGB(255, 255, 255)
 Rob.TextSize = 14.000
 
@@ -188,8 +188,35 @@ local function QPOLMF_fake_script() -- ScreenGui.LocalScript
  Button1 = "Ok";
  Callback = NotificationBindable;
 })
-    
-game.StarterGui:SetCore("SendNotification",  {
+
+
+
+
+	Open.MouseButton1Down:connect(function()
+      TextLabel.Visible = true
+      Open.Visible = false
+end)
+	
+	Exit.MouseButton1Down:connect(function()
+      TextLabel.Visible = false
+      Open.Visible = false
+end)
+
+    Min.MouseButton1Down:connect(function()
+      TextLabel.Visible = false
+      Open.Visible = true
+end)
+
+
+    Door.MouseButton1Down:connect(function()
+        local Doors = workspace.Doors
+			Doors.Parent = game.StarterGui
+    end)
+
+
+   
+   Rob.MouseButton1Down:connect(function()
+       game.StarterGui:SetCore("SendNotification",  {
  Title = "Jamm UI";
  Text = "Press C go up.";
  Icon = "";
@@ -220,11 +247,6 @@ end
 else
 Verify = false
 Fly:Destroy()
-end
-end
-end)
-
-
 
 Carpet = true
 local Fly
@@ -251,29 +273,10 @@ Fly:Destroy()
 end
 end
 end)
+end
+end
 end)
-
-	Open.MouseButton1Down:connect(function()
-      TextLabel.Visible = true
-      Open.Visible = false
 end)
-	
-	Exit.MouseButton1Down:connect(function()
-      TextLabel.Visible = false
-      Open.Visible = false
-end)
-
-    Min.MouseButton1Down:connect(function()
-      TextLabel.Visible = false
-      Open.Visible = true
-end)
-
-
-    Door.MouseButton1Down:connect(function()
-        local Doors = workspace.Doors
-			Doors.Parent = game.StarterGui
-    end)
-
    
 
    Speed.MouseButton1Down:connect(function()
