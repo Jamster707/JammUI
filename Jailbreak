@@ -137,7 +137,7 @@ Rob.BorderColor3 = Color3.fromRGB(33, 33, 33)
 Rob.Position = UDim2.new(0.0508474596, 0, 0.730158746, 0)
 Rob.Size = UDim2.new(0, 75, 0, 35)
 Rob.Font = Enum.Font.SourceSans
-Rob.Text = "Auto Rob"
+Rob.Text = "Car Float [Z]"
 Rob.TextColor3 = Color3.fromRGB(255, 255, 255)
 Rob.TextSize = 14.000
 
@@ -188,7 +188,73 @@ local function QPOLMF_fake_script() -- ScreenGui.LocalScript
  Button1 = "Ok";
  Callback = NotificationBindable;
 })
-	
+
+rob.MouseButton1Down:connect(function()
+    
+game.StarterGui:SetCore("SendNotification",  {
+ Title = "Jamm UI";
+ Text = "Press C go up.";
+ Icon = "";
+ Duration = 5;
+ Button1 = "Ok";
+ Callback = NotificationBindable;
+})
+
+Carpet = true
+local Fly
+local Verify = false
+Key = game:GetService("Players").LocalPlayer:GetMouse()
+
+Key.KeyDown:Connect(function(key)
+if key == "z" then
+if Verify == false then
+Verify = true
+Fly = Instance.new("Part", game:GetService("Workspace"))
+Fly.Anchored = true
+Fly.Size = Vector3.new(50,0.1,50)
+Fly.Material = "Plastic"
+Fly.Transparency = 1
+while Verify == true do
+Fly.BrickColor = BrickColor.Random()
+Fly.Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,-4,0)
+wait(0.1)
+end
+else
+Verify = false
+Fly:Destroy()
+end
+end
+end)
+
+
+
+Carpet = true
+local Fly
+local Verify = false
+Key = game:GetService("Players").LocalPlayer:GetMouse()
+
+Key.KeyDown:Connect(function(key)
+if key == "c" then
+if Verify == false then
+Verify = true
+Fly = Instance.new("Part", game:GetService("Workspace"))
+Fly.Anchored = true
+Fly.Size = Vector3.new(75,0.1,75)
+Fly.Material = "Plastic"
+Fly.Transparency = 1
+while Verify == true do
+Fly.BrickColor = BrickColor.Random()
+Fly.Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,-2,0)
+wait(0.1)
+end
+else
+Verify = false
+Fly:Destroy()
+end
+end
+end)
+end)
+
 	Open.MouseButton1Down:connect(function()
       TextLabel.Visible = true
       Open.Visible = false
@@ -210,11 +276,6 @@ end)
 			Doors.Parent = game.StarterGui
     end)
 
-
-   
-   Rob.MouseButton1Down:connect(function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/wawsdasdacx/ohascriptnrrewading/main/jbsaxcriptidk1"))()
-   end)
    
 
    Speed.MouseButton1Down:connect(function()
@@ -427,6 +488,8 @@ Mouse.Target:Destroy()
 end)
 end)
 
-	    
+
+
+
 end
 coroutine.wrap(QPOLMF_fake_script)()
